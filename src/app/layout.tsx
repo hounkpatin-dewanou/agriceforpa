@@ -19,6 +19,15 @@ export const metadata: Metadata = {
   description: "Agri CEFORPA",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1, // Empêche d'aller au-delà de 100%
+  userScalable: false, // Désactive l'interaction de zoom de l'utilisateur
+  // Optionnel: évite les décalages visuels lors du focus sur un input sur iOS
+  viewportFit: "cover", 
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,6 +43,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content=" Agri CEFORPA" />
         <link rel="manifest" href="/images/favicon/site.webmanifest" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"></meta>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
