@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { ArrowRight, Sprout, Star } from 'lucide-react';
+import Link from 'next/link';
 
 const Hero = () => {
   // Variantes pour les animations de texte
@@ -72,13 +73,23 @@ const Hero = () => {
             custom={0.8}
             className="flex flex-wrap gap-5"
           >
-            <button className="bg-agri-green hover:bg-agri-dark text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 transition-all duration-300 group shadow-lg shadow-agri-green/20">
+            
+            <Link 
+              href="/products" 
+            >
+              <button className="bg-agri-green cursor-pointer hover:bg-agri-dark text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 transition-all duration-300 group shadow-lg shadow-agri-green/20">
               Nos Produits 
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300">
+            </Link>
+            
+            <Link 
+              href="/services/formations" 
+            >
+              <button className="bg-white/5 cursor-pointer hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300">
               Découvrir les formations
             </button>
+            </Link>
           </motion.div>
         </div>
       </div>

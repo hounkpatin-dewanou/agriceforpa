@@ -19,7 +19,7 @@ const AboutSection = () => {
         
             <div className="text-center mb-16">
           <h2 className="text-agri-green font-bold text-sm uppercase tracking-widest mb-2">À Propos de nous</h2>
-          <h3 className="text-4xl font-extrabold text-agri-dark">L'avenir est dans la terre : <span className="text-agri-green">Agri CEFORPA</span></h3>
+          <h3 className="text-4xl font-extrabold text-agri-dark">Agri CEFORPA : <span className="text-agri-green">L'avenir est dans la terre </span></h3>
           
         </div>
         <div className="flex flex-col lg:flex-row items-center gap-16">

@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Lightbulb, Factory, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const services = [
   {
@@ -9,21 +10,24 @@ const services = [
     title: "Consultance",
     desc: "Bénéficiez de notre expertise pour optimiser vos rendements. Nous vous conseillons sur les meilleures pratiques agro-pastorales adaptées à votre environnement.",
     icon: <Lightbulb className="w-10 h-10" />,
-    color: "bg-blue-50 text-blue-600"
+    color: "bg-blue-50 text-blue-600",
+    link: "/services/consultance"
   },
   {
     id: 2,
     title: "Formations",
     desc: "Des programmes de formation certifiants en élevage, pisciculture et maraîchage bio pour booster vos compétences techniques et entrepreneuriales.",
     icon: <GraduationCap className="w-10 h-10" />,
-    color: "bg-orange-50 text-orange-600"
+    color: "bg-orange-50 text-orange-600", 
+    link: "/services/formations"        
   },
   {
     id: 3,
     title: "Installation de ferme",
     desc: "De la conception à la mise en exploitation, nous vous accompagnons dans la création de votre infrastructure agricole (bassins, locaux d'élevage, systèmes d'irrigation).",
     icon: <Factory className="w-10 h-10" />,
-    color: "bg-green-50 text-green-600"
+    color: "bg-green-50 text-green-600",
+    link: "/services/installation"
   }
 ];
 
@@ -78,10 +82,12 @@ const Services = () => {
               </p>
 
               {/* Bouton de redirection (Optionnel visuellement) */}
+              <Link href={service.link}>
               <div className="mt-auto flex items-center gap-2 text-agri-green font-bold cursor-pointer">
                 En savoir plus 
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
               </div>
+              </Link>
             </motion.div>
           ))}
         </div>

@@ -24,3 +24,15 @@ body {
   font-family: var(--font-sans), Arial, sans-serif;
   scroll-behavior: smooth;
 }
+
+/* Sélection de texte personnalisée */
+::selection {
+  background-color: #004d3d; /* Remplace par ta couleur exacte agri-green */
+  color: #ffffff;            /* Couleur du texte une fois sélectionné */
+}
+
+/* Pour Firefox */
+::-moz-selection {
+  background-color: #004d3d;
+  color: #ffffff;
+}

@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingCart, ArrowRight, Leaf } from 'lucide-react';
 import { products } from '@/data/data'; // Assure-toi que ce chemin est correct
+import ProductHero from '@/components/product/ProductHero';
+import ContactCTA from '@/components/home/ContactCTA';
 
 const categories = ["Tous", "Élevage", "Pisciculture", "Maraîchage"];
 
@@ -16,24 +18,11 @@ const ProductsPage = () => {
     : products.filter(p => p.category === filter);
 
   return (
-    <main className="pt-20">
+    <main id="product">
       {/* Header Section */}
-      <section className="relative h-[30vh] flex items-center justify-center bg-agri-dark overflow-hidden">
-        <div className="absolute inset-0 opacity-40">
-           <Image 
-            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000" 
-            alt="Agri Background" 
-            fill 
-            className="object-cover"
-          />
-        </div>
-        <div className="relative z-10 text-center">
-          <h1 className="text-5xl font-black text-white mb-2">Nos Produits</h1>
-          <p className="text-agri-accent uppercase tracking-widest font-bold">Le meilleur de la terre béninoise</p>
-        </div>
-      </section>
-
-      <section className="py-16 bg-agri-light-green/10">
+      
+      <ProductHero/>
+      <section className="py-4 bg-agri-light-green/10">
         <div className="container mx-auto px-4">
           {/* Filtres Interactifs */}
           <div className="flex flex-wrap justify-center gap-4 mb-16">
@@ -99,6 +88,8 @@ const ProductsPage = () => {
           </div>
         </div>
       </section>
+
+      <ContactCTA />
     </main>
   );
 };

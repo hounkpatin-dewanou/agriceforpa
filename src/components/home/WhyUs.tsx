@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
 
 const WhyChooseUs = () => {
   const features = [
@@ -75,9 +76,11 @@ const WhyChooseUs = () => {
               ))}
             </div>
 
-            <button className="bg-agri-green hover:bg-agri-dark text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-agri-green/40">
+            <Link href="/products">
+              <button className="bg-agri-green cursor-pointer hover:bg-agri-dark text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-agri-green/40">
               Explorer nos Produits
             </button>
+            </Link>
           </motion.div>
 
         </div>

@@ -5,17 +5,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { services } from '@/data/data'; // Assure-toi que ce chemin est correct
+import ServiceHero from '@/components/services/ServiceHero';
+import ContactCTA from '@/components/home/ContactCTA';
 
 const ServicesPage = () => {
   return (
-    <main className="pt-20">
+    <main id="services">
       {/* Header Section */}
-      <section className="relative h-[30vh] flex items-center justify-center bg-agri-green overflow-hidden">
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-black mb-2">Expertise & Accompagnement</h1>
-          <p className="text-agri-accent uppercase tracking-widest font-bold opacity-90">Propulsez votre projet agricole</p>
-        </div>
-      </section>
+      <ServiceHero/>
 
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
@@ -30,14 +27,16 @@ const ServicesPage = () => {
                 className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center`}
               >
                 {/* Image du service */}
-                <div className="w-full lg:w-1/2 relative h-[400px] rounded-[3rem] overflow-hidden shadow-xl">
-                  <Image 
-                    src={service.image} 
-                    alt={service.title} 
-                    fill 
-                    className="object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
+<div className="w-full lg:w-1/2 h-[400px] rounded-[3rem] relative overflow-hidden shadow-xl">
+  <Image
+    src={service.image} 
+    alt={service.title} 
+    fill 
+    sizes="(max-width: 768px) 100vw, 50vw" // Optionnel mais recommandé pour la performance
+    className="object-cover hover:scale-105 transition-transform duration-700"
+    priority={index === 0} // Charge la première image plus vite
+  />
+</div>
 
                 {/* Contenu du service */}
                 <div className="w-full lg:w-1/2 space-y-6">
@@ -69,6 +68,7 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
+      <ContactCTA />
     </main>
   );
 };
